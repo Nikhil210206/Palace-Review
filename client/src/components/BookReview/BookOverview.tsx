@@ -1,147 +1,155 @@
-import { Card } from "@/components/ui/card";
-import { Calendar, BookOpen, Star, Award, User, BookMarked, Globe } from "lucide-react";
+import { Book, Calendar, User, Award } from "lucide-react";
 
 export default function BookOverview() {
   return (
     <section className="mb-20 pt-10">
       <div className="max-w-4xl mx-auto">
-        <div className="flex flex-col md:flex-row gap-12 items-center mb-12">
-          <div className="md:w-1/3">
-            <div className="relative aspect-[2/3] shadow-2xl">
-              <div className="absolute inset-0 bg-gradient-to-br from-[#5D4777] to-[#3A7D7B] rounded-md"></div>
-              <div className="absolute inset-0 flex flex-col items-center justify-center text-white p-8">
-                <h3 className="font-serif text-3xl font-bold text-center mb-4">Palace of Illusions</h3>
-                <div className="w-16 h-1 bg-[#D4AF37] mb-4"></div>
-                <p className="font-serif italic text-center mb-8">A novel by Chitra Banerjee Divakaruni</p>
-                <BookMarked size={64} className="text-[#D4AF37] opacity-80" />
+        <div className="text-center mb-12">
+          <h2 className="font-serif text-4xl font-bold text-[#5D4777] mb-4">Book Overview</h2>
+          <p className="text-xl text-gray-600 max-w-3xl mx-auto">A feminist retelling of the Mahabharata epic from Draupadi's perspective</p>
+        </div>
+        
+        {/* Book Details Card */}
+        <div className="bg-white rounded-lg shadow-lg p-8 mb-12">
+          <div className="flex flex-col md:flex-row">
+            <div className="md:w-1/3 mb-6 md:mb-0 flex justify-center">
+              <div className="w-52 h-72 bg-gradient-to-br from-[#5D4777] to-[#3A7D7B] rounded-md flex items-center justify-center">
+                <div className="w-48 h-68 border-2 border-white/30 rounded flex items-center justify-center">
+                  <Book size={64} className="text-white" />
+                  <span className="sr-only">Palace of Illusions Cover</span>
+                </div>
               </div>
-              <div className="absolute inset-0 border-2 border-[#D4AF37] opacity-50 rounded-md"></div>
-            </div>
-          </div>
-          
-          <div className="md:w-2/3">
-            <div className="inline-block mb-4">
-              <h2 className="font-serif text-3xl md:text-4xl font-bold text-[#5D4777] relative inline-block">
-                Book Overview
-                <div className="h-1 w-full bg-[#D4AF37] mt-1 absolute bottom-0 left-0"></div>
-              </h2>
             </div>
             
-            <p className="mb-4 text-lg">
-              Chitra Banerjee Divakaruni reimagines the ancient Indian epic Mahabharata through the eyes of its leading female character, Draupadi (Panchaali). Born from fire and destined for an extraordinary life, Panchaali's narrative offers a fresh perspective on this classic tale.
-            </p>
-            
-            <p className="mb-4 text-lg">
-              As a bold and determined woman in a patriarchal society, Panchaali navigates the complexities of being a daughter, wife to five husbands, and a catalyst in a devastating war. Her journey illuminates the constraints placed on women and her continuous struggle for agency and identity.
-            </p>
-            
-            <p className="mb-6 text-lg">
-              Through this feminist retelling, Divakaruni challenges traditional narratives and explores timeless themes of destiny, power, love, and gender roles that resonate strongly with contemporary discussions of gender equality.
-            </p>
-            
-            <div className="flex flex-wrap gap-3 mb-6">
-              <span className="bg-[#F0E6FF] text-[#5D4777] px-3 py-1 rounded-full text-sm font-medium">Feminist Retelling</span>
-              <span className="bg-[#E0F2F1] text-[#3A7D7B] px-3 py-1 rounded-full text-sm font-medium">Historical Fiction</span>
-              <span className="bg-[#F0E6FF] text-[#5D4777] px-3 py-1 rounded-full text-sm font-medium">Mythology</span>
-              <span className="bg-[#E0F2F1] text-[#3A7D7B] px-3 py-1 rounded-full text-sm font-medium">Gender Roles</span>
-            </div>
-            
-            <div className="flex flex-wrap items-center text-sm text-gray-600 mb-4">
-              <div className="flex items-center mr-6 mb-2">
-                <Calendar className="mr-2 text-[#5D4777]" size={16} />
-                <span>Published: 2008</span>
+            <div className="md:w-2/3 md:pl-8">
+              <h3 className="font-serif text-2xl font-bold text-[#5D4777] mb-3">Palace of Illusions</h3>
+              <p className="text-lg font-serif italic text-gray-700 mb-4">By Chitra Banerjee Divakaruni</p>
+              
+              <div className="space-y-4 mb-6">
+                <div className="flex items-center">
+                  <Calendar size={20} className="text-[#5D4777] mr-3" />
+                  <span><span className="font-medium">Published:</span> February 12, 2008 (Doubleday)</span>
+                </div>
+                
+                <div className="flex items-center">
+                  <User size={20} className="text-[#5D4777] mr-3" />
+                  <span><span className="font-medium">Point of View:</span> First person (Draupadi/Panchaali)</span>
+                </div>
+                
+                <div className="flex items-center">
+                  <Award size={20} className="text-[#5D4777] mr-3" />
+                  <span><span className="font-medium">Accolades:</span> American Book Award, Light of India Award</span>
+                </div>
               </div>
-              <div className="flex items-center mr-6 mb-2">
-                <BookOpen className="mr-2 text-[#5D4777]" size={16} />
-                <span>360 pages</span>
-              </div>
-              <div className="flex items-center mr-6 mb-2">
-                <Globe className="mr-2 text-[#5D4777]" size={16} />
-                <span>Setting: Ancient India</span>
-              </div>
-              <div className="flex items-center mb-2">
-                <Star className="mr-2 text-[#5D4777]" size={16} />
-                <span>Rating: 4.5/5</span>
+              
+              <p className="text-gray-700 mb-4">
+                "Palace of Illusions" gives voice to Panchaali, the fire-born heroine of the Mahabharata, as she narrates the ancient Indian epic from her perspective—chronicling her magical birth, unwanted marriage to five royal brothers, and the dangerous path of a woman in a society that views her as property.
+              </p>
+              
+              <div className="flex space-x-4">
+                <a 
+                  href="https://www.penguinrandomhouse.com/books/89490/the-palace-of-illusions-by-chitra-banerjee-divakaruni/" 
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-block bg-[#5D4777] hover:bg-[#5D4777]/80 text-white px-4 py-2 rounded transition"
+                >
+                  Publisher's Site
+                </a>
+                <a 
+                  href="https://www.goodreads.com/book/show/1774836.The_Palace_of_Illusions" 
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-block border border-[#5D4777] text-[#5D4777] hover:bg-[#5D4777]/10 px-4 py-2 rounded transition"
+                >
+                  Goodreads
+                </a>
               </div>
             </div>
           </div>
         </div>
         
         {/* Author Information */}
-        <div className="bg-white rounded-lg shadow-lg p-8 mb-12">
-          <div className="flex flex-col md:flex-row gap-6 items-center">
-            <div className="md:w-1/4 flex justify-center">
-              <div className="w-32 h-32 rounded-full bg-[#F0E6FF] flex items-center justify-center">
-                <User size={64} className="text-[#5D4777]" />
+        <div className="mb-12">
+          <h3 className="font-serif text-2xl font-bold text-[#5D4777] mb-6 text-center">About the Author</h3>
+          
+          <div className="bg-gradient-to-r from-[#F0E6FF] to-[#E0F2F1] rounded-lg p-8">
+            <div className="flex flex-col md:flex-row items-center">
+              <div className="md:w-1/4 mb-6 md:mb-0 flex justify-center">
+                <div className="w-32 h-32 bg-white rounded-full flex items-center justify-center shadow-md">
+                  <svg 
+                    viewBox="0 0 24 24" 
+                    width="64" 
+                    height="64" 
+                    stroke="currentColor" 
+                    strokeWidth="1.5" 
+                    fill="none" 
+                    strokeLinecap="round" 
+                    strokeLinejoin="round" 
+                    className="text-[#5D4777]"
+                  >
+                    <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                    <circle cx="12" cy="7" r="4"></circle>
+                  </svg>
+                </div>
               </div>
-            </div>
-            <div className="md:w-3/4">
-              <h3 className="font-serif text-2xl font-bold text-[#5D4777] mb-3">About the Author</h3>
-              <p className="mb-4">
-                Chitra Banerjee Divakaruni is an award-winning author, poet, and professor of creative writing. Born in India and now based in the United States, her work often explores the immigrant experience, female empowerment, and the rich cultural heritage of India.
-              </p>
-              <p>
-                Her ability to weave traditional stories with contemporary feminist perspectives has made her a significant voice in discussions about gender and cultural identity. Through works like "The Palace of Illusions," Divakaruni demonstrates how revisiting classic narratives through overlooked female perspectives can transform our understanding of both literature and history.
-              </p>
+              
+              <div className="md:w-3/4">
+                <h4 className="font-serif text-xl font-bold text-[#5D4777] mb-2">Chitra Banerjee Divakaruni</h4>
+                <p className="mb-4">
+                  Born in Kolkata, India, Chitra Banerjee Divakaruni is an award-winning author, poet, and professor. Her work spans multiple genres, including realistic fiction, historical fiction, magical realism, and fantasy.
+                </p>
+                <p className="mb-4">
+                  Divakaruni's writing consistently explores the immigrant experience, the complexities of the South Asian diaspora, and the unique challenges faced by women across cultures. Her novels are known for their lyrical prose and the depth with which they portray female protagonists.
+                </p>
+                <p>
+                  In addition to "Palace of Illusions," her notable works include "Sister of My Heart," "The Mistress of Spices," "One Amazing Thing," and "The Forest of Enchantments"—another feminist retelling, this time of the Ramayana from Sita's perspective.
+                </p>
+              </div>
             </div>
           </div>
         </div>
         
-        {/* Critical Reception */}
-        <div className="bg-white rounded-lg shadow-lg p-8 mb-12">
-          <h3 className="font-serif text-2xl font-bold text-[#5D4777] mb-6">Critical Reception</h3>
+        {/* Synopsis Section */}
+        <div className="bg-white rounded-lg shadow-md p-8 mb-12">
+          <h3 className="font-serif text-2xl font-bold text-[#5D4777] mb-4 text-center">Synopsis</h3>
           
-          <div className="grid md:grid-cols-2 gap-8">
-            <div className="border-l-4 border-[#5D4777] pl-4">
-              <p className="italic mb-3">
-                "Divakaruni's Palace of Illusions is not simply a retelling of the Mahabharata, but a re-envisioning of the world's longest epic through the eyes of a courageous protagonist who transforms her destiny."
-              </p>
-              <p className="text-sm text-gray-600">— The New York Times</p>
-            </div>
-            
-            <div className="border-l-4 border-[#3A7D7B] pl-4">
-              <p className="italic mb-3">
-                "A radiant entrée into an ancient mythology virtually unknown to Western readers... Divakaruni's impulse to flesh out the women's stories makes sense to modern readers, and her prose is transcendent."
-              </p>
-              <p className="text-sm text-gray-600">— Publishers Weekly</p>
-            </div>
-          </div>
+          <p className="mb-4">
+            Born from fire, Draupadi—also known as Panchaali—is destined to change the course of history. Growing up as the beloved and cherished daughter of King Drupad, she develops an unusual education for a princess, learning statecraft, weaponry, and political strategy alongside her twin brother Dhristadyumna.
+          </p>
+          
+          <p className="mb-4">
+            Her life takes a dramatic turn when she is married to all five of the Pandava brothers—a uniquely complex marriage that becomes the center of her complicated relationships throughout the epic. Draupadi develops a particularly deep affection for Karna, her husbands' sworn enemy, adding layers of emotional complexity to her narrative.
+          </p>
+          
+          <p className="mb-4">
+            As the Pandavas' shared wife, Draupadi experiences both power and helplessness. She becomes queen when her husbands gain their kingdom, only to be gambled away by Yudhishthir in a fateful game of dice, leading to her infamous public humiliation and a vow of vengeance that helps precipitate the devastating Kurukshetra War.
+          </p>
+          
+          <p>
+            Throughout her journey, Draupadi navigates a world dominated by men and divine prophecies, struggling to maintain her sense of self and dignity in a society that views her primarily as a possession. Her story becomes a powerful lens through which to examine themes of gender, power, destiny, and the possibility of creating one's own path in a world governed by seemingly immutable traditions.
+          </p>
         </div>
         
-        {/* Literary Significance */}
-        <div className="bg-white rounded-lg shadow-lg p-8">
-          <h3 className="font-serif text-2xl font-bold text-[#5D4777] mb-6">Literary Significance</h3>
+        {/* Historical Context */}
+        <div className="grid md:grid-cols-2 gap-8">
+          <div className="bg-white rounded-lg shadow-md p-6">
+            <h3 className="font-serif text-xl font-bold text-[#5D4777] mb-4">Historical Context</h3>
+            <p className="mb-4">
+              The Mahabharata is one of the world's longest epic poems and a cornerstone of Hindu mythology and Indian literature. Composed between 400 BCE and 400 CE, it contains approximately 100,000 verses divided into 18 books.
+            </p>
+            <p>
+              While traditionally attributed to the sage Vyasa, the epic evolved through oral tradition with multiple authors contributing over centuries. The story centers on the Kurukshetra War between the Pandavas and Kauravas, but encompasses philosophical discussions including the Bhagavad Gita.
+            </p>
+          </div>
           
-          <div className="grid md:grid-cols-3 gap-6">
-            <div className="bg-[#F0E6FF]/30 p-5 rounded-md">
-              <div className="flex justify-center mb-4">
-                <Award className="text-[#5D4777]" size={32} />
-              </div>
-              <h4 className="font-serif text-lg font-bold text-center text-[#5D4777] mb-2">Feminist Perspective</h4>
-              <p className="text-sm text-center">
-                By centering Draupadi's voice, the novel challenges traditional patriarchal interpretations of the Mahabharata, offering readers a fresh lens through which to view this foundational text.
-              </p>
-            </div>
-            
-            <div className="bg-[#E0F2F1]/30 p-5 rounded-md">
-              <div className="flex justify-center mb-4">
-                <Award className="text-[#3A7D7B]" size={32} />
-              </div>
-              <h4 className="font-serif text-lg font-bold text-center text-[#5D4777] mb-2">Cultural Bridge</h4>
-              <p className="text-sm text-center">
-                The novel serves as an accessible entry point to Indian mythology for Western readers while offering a provocative reinterpretation for those already familiar with the epic.
-              </p>
-            </div>
-            
-            <div className="bg-[#FFF8E0] p-5 rounded-md">
-              <div className="flex justify-center mb-4">
-                <Award className="text-[#D4AF37]" size={32} />
-              </div>
-              <h4 className="font-serif text-lg font-bold text-center text-[#5D4777] mb-2">Literary Innovation</h4>
-              <p className="text-sm text-center">
-                Divakaruni's work exemplifies how revisionist mythology can create powerful commentary on contemporary social issues through historical reframing.
-              </p>
-            </div>
+          <div className="bg-white rounded-lg shadow-md p-6">
+            <h3 className="font-serif text-xl font-bold text-[#5D4777] mb-4">Literary Significance</h3>
+            <p className="mb-4">
+              "Palace of Illusions" belongs to a growing tradition of feminist retellings that recenter traditionally male-dominated narratives around female characters, revealing new dimensions of familiar stories.
+            </p>
+            <p>
+              By choosing Draupadi as narrator, Divakaruni illuminates aspects of the Mahabharata that traditional tellings often minimize: the domestic sphere, women's experiences of war and politics, and the emotional complexities of characters often portrayed as primarily symbolic or functional to the main plot.
+            </p>
           </div>
         </div>
       </div>

@@ -5,6 +5,8 @@ import ThematicAnalysis from "@/components/BookReview/ThematicAnalysis";
 import CharacterAnalysis from "@/components/BookReview/CharacterAnalysis";
 import QuoteShowcase from "@/components/BookReview/QuoteShowcase";
 import ContactForm from "@/components/BookReview/ContactForm";
+import BookReview from "@/components/BookReview/BookReview";
+import Conclusion from "@/components/BookReview/Conclusion";
 import Footer from "@/components/BookReview/Footer";
 import { useRef, useState, useEffect } from "react";
 import { ArrowUp } from "lucide-react";
@@ -16,6 +18,8 @@ export default function Home() {
   const quotesRef = useRef<HTMLDivElement>(null);
   const contactRef = useRef<HTMLDivElement>(null);
   const sdgRef = useRef<HTMLDivElement>(null);
+  const reviewsRef = useRef<HTMLDivElement>(null);
+  const conclusionRef = useRef<HTMLDivElement>(null);
   const topRef = useRef<HTMLDivElement>(null);
   
   const [showBackToTop, setShowBackToTop] = useState(false);
@@ -60,6 +64,12 @@ export default function Home() {
       case 'quotes':
         scrollToSection(quotesRef);
         break;
+      case 'reviews':
+        scrollToSection(reviewsRef);
+        break;
+      case 'conclusion':
+        scrollToSection(conclusionRef);
+        break;
       case 'contact':
         scrollToSection(contactRef);
         break;
@@ -99,6 +109,14 @@ export default function Home() {
         
         <div ref={quotesRef}>
           <QuoteShowcase />
+        </div>
+        
+        <div ref={reviewsRef}>
+          <BookReview />
+        </div>
+        
+        <div ref={conclusionRef}>
+          <Conclusion />
         </div>
         
         <div ref={contactRef}>

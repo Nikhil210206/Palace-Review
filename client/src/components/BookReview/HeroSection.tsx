@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { MenuIcon, X, Book, Users, Quote, MessageSquare, BarChart2, HomeIcon } from "lucide-react";
+import { MenuIcon, X, Book, Users, Quote, MessageSquare, BarChart2, HomeIcon, Star, Award } from "lucide-react";
 
 interface HeroSectionProps {
   onExploreThemes: () => void;
@@ -48,6 +48,8 @@ export default function HeroSection({
               <li><button onClick={() => onNavigate('themes')} className="text-white hover:text-[#D4AF37] transition">Themes</button></li>
               <li><button onClick={() => onNavigate('characters')} className="text-white hover:text-[#D4AF37] transition">Characters</button></li>
               <li><button onClick={() => onNavigate('quotes')} className="text-white hover:text-[#D4AF37] transition">Quotes</button></li>
+              <li><button onClick={() => onNavigate('reviews')} className="text-white hover:text-[#D4AF37] transition">Reviews</button></li>
+              <li><button onClick={() => onNavigate('conclusion')} className="text-white hover:text-[#D4AF37] transition">Conclusion</button></li>
               <li><button onClick={() => onNavigate('contact')} className="text-white hover:text-[#D4AF37] transition">Contact</button></li>
             </ul>
             
@@ -68,7 +70,7 @@ export default function HeroSection({
         mobileMenuOpen ? "opacity-100" : "opacity-0 pointer-events-none"
       }`} onClick={() => setMobileMenuOpen(false)}>
         <div 
-          className={`fixed top-0 right-0 h-full w-64 bg-[#5D4777] transform transition-transform duration-300 ease-in-out z-50 ${
+          className={`fixed top-0 right-0 h-full w-64 bg-[#5D4777] transform transition-transform duration-300 ease-in-out z-50 overflow-y-auto ${
             mobileMenuOpen ? "translate-x-0" : "translate-x-full"
           }`}
           onClick={(e) => e.stopPropagation()}
@@ -81,6 +83,11 @@ export default function HeroSection({
             >
               <X size={24} />
             </button>
+          </div>
+          
+          <div className="p-4 border-b border-[#D4AF37]/30">
+            <h2 className="text-white font-serif text-lg">Palace of Illusions</h2>
+            <p className="text-white/70 text-sm">Literary Analysis</p>
           </div>
           
           <ul className="px-4 py-2">
@@ -147,6 +154,30 @@ export default function HeroSection({
             <li className="mb-4">
               <button 
                 onClick={() => { 
+                  onNavigate('reviews'); 
+                  setMobileMenuOpen(false);
+                }} 
+                className="flex items-center text-white hover:text-[#D4AF37] transition w-full py-2"
+              >
+                <Star className="mr-3" size={20} />
+                <span>Book Reviews</span>
+              </button>
+            </li>
+            <li className="mb-4">
+              <button 
+                onClick={() => { 
+                  onNavigate('conclusion'); 
+                  setMobileMenuOpen(false);
+                }} 
+                className="flex items-center text-white hover:text-[#D4AF37] transition w-full py-2"
+              >
+                <Award className="mr-3" size={20} />
+                <span>Conclusion</span>
+              </button>
+            </li>
+            <li className="mb-4">
+              <button 
+                onClick={() => { 
                   onNavigate('contact'); 
                   setMobileMenuOpen(false);
                 }} 
@@ -157,6 +188,39 @@ export default function HeroSection({
               </button>
             </li>
           </ul>
+          
+          <div className="p-4 mt-4 bg-[#D4AF37]/10">
+            <p className="text-white/70 text-sm mb-2">Explore Sections</p>
+            <div className="flex flex-wrap gap-2">
+              <button 
+                onClick={() => { 
+                  onNavigate('overview'); 
+                  setMobileMenuOpen(false);
+                }} 
+                className="bg-white/10 hover:bg-white/20 text-white text-xs px-2 py-1 rounded"
+              >
+                Overview
+              </button>
+              <button 
+                onClick={() => { 
+                  onNavigate('themes'); 
+                  setMobileMenuOpen(false);
+                }} 
+                className="bg-white/10 hover:bg-white/20 text-white text-xs px-2 py-1 rounded"
+              >
+                Themes
+              </button>
+              <button 
+                onClick={() => { 
+                  onNavigate('reviews'); 
+                  setMobileMenuOpen(false);
+                }} 
+                className="bg-white/10 hover:bg-white/20 text-white text-xs px-2 py-1 rounded"
+              >
+                Reviews
+              </button>
+            </div>
+          </div>
         </div>
       </div>
       

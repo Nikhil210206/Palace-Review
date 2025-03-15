@@ -50,6 +50,8 @@ export default function Footer({ onNavigate }: FooterProps) {
               <li><button onClick={() => onNavigate('themes')} className="text-gray-400 hover:text-[#D4AF37] transition">Thematic Analysis</button></li>
               <li><button onClick={() => onNavigate('characters')} className="text-gray-400 hover:text-[#D4AF37] transition">Character Analysis</button></li>
               <li><button onClick={() => onNavigate('quotes')} className="text-gray-400 hover:text-[#D4AF37] transition">Quote Showcase</button></li>
+              <li><button onClick={() => onNavigate('reviews')} className="text-gray-400 hover:text-[#D4AF37] transition">Book Reviews</button></li>
+              <li><button onClick={() => onNavigate('conclusion')} className="text-gray-400 hover:text-[#D4AF37] transition">Conclusion</button></li>
               <li><button onClick={() => onNavigate('contact')} className="text-gray-400 hover:text-[#D4AF37] transition">Contact</button></li>
               <li><button onClick={() => onNavigate('top')} className="text-gray-400 hover:text-[#D4AF37] transition flex items-center mt-4">
                 <span>Back to Top</span>
