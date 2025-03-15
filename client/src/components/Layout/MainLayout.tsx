@@ -43,21 +43,21 @@ export default function MainLayout({ children }: MainLayoutProps) {
       }`}>
         <div className="container mx-auto px-6">
           <div className="flex justify-between items-center">
-            <Link href="/">
-              <a className="text-xl font-serif italic text-white">Literary Reflections</a>
+            <Link href="/" className="text-xl font-serif italic text-white">
+              Literary Reflections
             </Link>
             
             {/* Desktop Navigation */}
             <ul className="hidden md:flex space-x-8">
-              <li><Link href="/"><a className="text-white hover:text-[#D4AF37] transition">Home</a></Link></li>
-              <li><Link href="/book-overview"><a className="text-white hover:text-[#D4AF37] transition">Overview</a></Link></li>
-              <li><Link href="/sdg-connection"><a className="text-white hover:text-[#D4AF37] transition">SDG 5</a></Link></li>
-              <li><Link href="/thematic-analysis"><a className="text-white hover:text-[#D4AF37] transition">Themes</a></Link></li>
-              <li><Link href="/character-analysis"><a className="text-white hover:text-[#D4AF37] transition">Characters</a></Link></li>
-              <li><Link href="/quotes"><a className="text-white hover:text-[#D4AF37] transition">Quotes</a></Link></li>
-              <li><Link href="/reviews"><a className="text-white hover:text-[#D4AF37] transition">Reviews</a></Link></li>
-              <li><Link href="/conclusion"><a className="text-white hover:text-[#D4AF37] transition">Conclusion</a></Link></li>
-              <li><Link href="/contact"><a className="text-white hover:text-[#D4AF37] transition">Contact</a></Link></li>
+              <li><Link href="/" className="text-white hover:text-[#D4AF37] transition">Home</Link></li>
+              <li><Link href="/book-overview" className="text-white hover:text-[#D4AF37] transition">Overview</Link></li>
+              <li><Link href="/sdg-connection" className="text-white hover:text-[#D4AF37] transition">SDG 5</Link></li>
+              <li><Link href="/thematic-analysis" className="text-white hover:text-[#D4AF37] transition">Themes</Link></li>
+              <li><Link href="/character-analysis" className="text-white hover:text-[#D4AF37] transition">Characters</Link></li>
+              <li><Link href="/quote-showcase" className="text-white hover:text-[#D4AF37] transition">Quotes</Link></li>
+              <li><Link href="/book-review" className="text-white hover:text-[#D4AF37] transition">Reviews</Link></li>
+              <li><Link href="/conclusion" className="text-white hover:text-[#D4AF37] transition">Conclusion</Link></li>
+              <li><Link href="/contact" className="text-white hover:text-[#D4AF37] transition">Contact</Link></li>
             </ul>
             
             {/* Mobile Menu Button */}
@@ -99,102 +99,93 @@ export default function MainLayout({ children }: MainLayoutProps) {
           
           <ul className="px-4 py-2">
             <li className="mb-4">
-              <Link href="/">
-                <a 
-                  className="flex items-center text-white hover:text-[#D4AF37] transition w-full py-2"
-                  onClick={() => setMobileMenuOpen(false)}
-                >
-                  <HomeIcon className="mr-3" size={20} />
-                  <span>Home</span>
-                </a>
+              <Link 
+                href="/" 
+                className="flex items-center text-white hover:text-[#D4AF37] transition w-full py-2"
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                <HomeIcon className="mr-3" size={20} />
+                <span>Home</span>
               </Link>
             </li>
             <li className="mb-4">
-              <Link href="/book-overview">
-                <a 
-                  className="flex items-center text-white hover:text-[#D4AF37] transition w-full py-2"
-                  onClick={() => setMobileMenuOpen(false)}
-                >
-                  <Book className="mr-3" size={20} />
-                  <span>Book Overview</span>
-                </a>
+              <Link 
+                href="/book-overview" 
+                className="flex items-center text-white hover:text-[#D4AF37] transition w-full py-2"
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                <Book className="mr-3" size={20} />
+                <span>Book Overview</span>
               </Link>
             </li>
             <li className="mb-4">
-              <Link href="/sdg-connection">
-                <a 
-                  className="flex items-center text-white hover:text-[#D4AF37] transition w-full py-2"
-                  onClick={() => setMobileMenuOpen(false)}
-                >
-                  <BarChart2 className="mr-3" size={20} />
-                  <span>SDG 5 Connection</span>
-                </a>
+              <Link 
+                href="/sdg-connection" 
+                className="flex items-center text-white hover:text-[#D4AF37] transition w-full py-2"
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                <BarChart2 className="mr-3" size={20} />
+                <span>SDG 5 Connection</span>
               </Link>
             </li>
             <li className="mb-4">
-              <Link href="/thematic-analysis">
-                <a 
-                  className="flex items-center text-white hover:text-[#D4AF37] transition w-full py-2"
-                  onClick={() => setMobileMenuOpen(false)}
-                >
-                  <HomeIcon className="mr-3" size={20} />
-                  <span>Thematic Analysis</span>
-                </a>
+              <Link 
+                href="/thematic-analysis" 
+                className="flex items-center text-white hover:text-[#D4AF37] transition w-full py-2"
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                <HomeIcon className="mr-3" size={20} />
+                <span>Thematic Analysis</span>
               </Link>
             </li>
             <li className="mb-4">
-              <Link href="/character-analysis">
-                <a 
-                  className="flex items-center text-white hover:text-[#D4AF37] transition w-full py-2"
-                  onClick={() => setMobileMenuOpen(false)}
-                >
-                  <Users className="mr-3" size={20} />
-                  <span>Character Analysis</span>
-                </a>
+              <Link 
+                href="/character-analysis" 
+                className="flex items-center text-white hover:text-[#D4AF37] transition w-full py-2"
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                <Users className="mr-3" size={20} />
+                <span>Character Analysis</span>
               </Link>
             </li>
             <li className="mb-4">
-              <Link href="/quotes">
-                <a 
-                  className="flex items-center text-white hover:text-[#D4AF37] transition w-full py-2"
-                  onClick={() => setMobileMenuOpen(false)}
-                >
-                  <Quote className="mr-3" size={20} />
-                  <span>Quote Showcase</span>
-                </a>
+              <Link 
+                href="/quote-showcase" 
+                className="flex items-center text-white hover:text-[#D4AF37] transition w-full py-2"
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                <Quote className="mr-3" size={20} />
+                <span>Quote Showcase</span>
               </Link>
             </li>
             <li className="mb-4">
-              <Link href="/reviews">
-                <a 
-                  className="flex items-center text-white hover:text-[#D4AF37] transition w-full py-2"
-                  onClick={() => setMobileMenuOpen(false)}
-                >
-                  <Star className="mr-3" size={20} />
-                  <span>Book Reviews</span>
-                </a>
+              <Link 
+                href="/book-review" 
+                className="flex items-center text-white hover:text-[#D4AF37] transition w-full py-2"
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                <Star className="mr-3" size={20} />
+                <span>Book Reviews</span>
               </Link>
             </li>
             <li className="mb-4">
-              <Link href="/conclusion">
-                <a 
-                  className="flex items-center text-white hover:text-[#D4AF37] transition w-full py-2"
-                  onClick={() => setMobileMenuOpen(false)}
-                >
-                  <Award className="mr-3" size={20} />
-                  <span>Conclusion</span>
-                </a>
+              <Link 
+                href="/conclusion" 
+                className="flex items-center text-white hover:text-[#D4AF37] transition w-full py-2"
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                <Award className="mr-3" size={20} />
+                <span>Conclusion</span>
               </Link>
             </li>
             <li className="mb-4">
-              <Link href="/contact">
-                <a 
-                  className="flex items-center text-white hover:text-[#D4AF37] transition w-full py-2"
-                  onClick={() => setMobileMenuOpen(false)}
-                >
-                  <MessageSquare className="mr-3" size={20} />
-                  <span>Contact Form</span>
-                </a>
+              <Link 
+                href="/contact" 
+                className="flex items-center text-white hover:text-[#D4AF37] transition w-full py-2"
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                <MessageSquare className="mr-3" size={20} />
+                <span>Contact Form</span>
               </Link>
             </li>
           </ul>
