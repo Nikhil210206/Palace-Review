@@ -19,6 +19,14 @@ export default {
         sm: "calc(var(--radius) - 4px)",
       },
       colors: {
+        // Custom theme colors
+        "dusky-rose": "#C27F80",
+        "weathered-gold": "#D4B56A",
+        "deep-indigo": "#3F4C7F",
+        "burnt-umber": "#8C533E",
+        "silver-gray": "#C0C0C0",
+        
+        // Original Shadcn colors
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
         card: {
