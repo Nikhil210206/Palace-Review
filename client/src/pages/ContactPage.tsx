@@ -1,5 +1,5 @@
-import ContactForm from "@/components/BookReview/ContactForm";
-import MainLayout from "@/components/Layout/MainLayout";
+import ContactForm from "../components/BookReview/ContactForm";
+import MainLayout from "../components/Layout/MainLayout";
 
 export default function ContactPage() {
   return (
