@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { Link } from "wouter";
 import { MenuIcon, X, Book, Users, Quote, MessageSquare, BarChart2, HomeIcon, Star, Award } from "lucide-react";
 
 interface HeroSectionProps {
@@ -43,14 +44,14 @@ export default function HeroSection({
             
             {/* Desktop Navigation */}
             <ul className="hidden md:flex space-x-8">
-              <li><button onClick={() => onNavigate('overview')} className="text-white hover:text-[#D4AF37] transition">Overview</button></li>
-              <li><button onClick={() => onNavigate('sdg')} className="text-white hover:text-[#D4AF37] transition">SDG 5</button></li>
-              <li><button onClick={() => onNavigate('themes')} className="text-white hover:text-[#D4AF37] transition">Themes</button></li>
-              <li><button onClick={() => onNavigate('characters')} className="text-white hover:text-[#D4AF37] transition">Characters</button></li>
-              <li><button onClick={() => onNavigate('quotes')} className="text-white hover:text-[#D4AF37] transition">Quotes</button></li>
-              <li><button onClick={() => onNavigate('reviews')} className="text-white hover:text-[#D4AF37] transition">Reviews</button></li>
-              <li><button onClick={() => onNavigate('conclusion')} className="text-white hover:text-[#D4AF37] transition">Conclusion</button></li>
-              <li><button onClick={() => onNavigate('contact')} className="text-white hover:text-[#D4AF37] transition">Contact</button></li>
+              <li><Link href="/book-overview" className="text-white hover:text-[#D4AF37] transition">Overview</Link></li>
+              <li><Link href="/sdg-connection" className="text-white hover:text-[#D4AF37] transition">SDG 5</Link></li>
+              <li><Link href="/thematic-analysis" className="text-white hover:text-[#D4AF37] transition">Themes</Link></li>
+              <li><Link href="/character-analysis" className="text-white hover:text-[#D4AF37] transition">Characters</Link></li>
+              <li><Link href="/quote-showcase" className="text-white hover:text-[#D4AF37] transition">Quotes</Link></li>
+              <li><Link href="/book-review" className="text-white hover:text-[#D4AF37] transition">Reviews</Link></li>
+              <li><Link href="/conclusion" className="text-white hover:text-[#D4AF37] transition">Conclusion</Link></li>
+              <li><Link href="/contact" className="text-white hover:text-[#D4AF37] transition">Contact</Link></li>
             </ul>
             
             {/* Mobile Menu Button */}
@@ -92,133 +93,111 @@ export default function HeroSection({
           
           <ul className="px-4 py-2">
             <li className="mb-4">
-              <button 
-                onClick={() => { 
-                  onNavigate('overview'); 
-                  setMobileMenuOpen(false);
-                }} 
+              <Link 
+                href="/book-overview" 
                 className="flex items-center text-white hover:text-[#D4AF37] transition w-full py-2"
+                onClick={() => setMobileMenuOpen(false)}
               >
                 <Book className="mr-3" size={20} />
                 <span>Book Overview</span>
-              </button>
+              </Link>
             </li>
             <li className="mb-4">
-              <button 
-                onClick={() => { 
-                  onNavigate('sdg'); 
-                  setMobileMenuOpen(false);
-                }} 
+              <Link 
+                href="/sdg-connection" 
                 className="flex items-center text-white hover:text-[#D4AF37] transition w-full py-2"
+                onClick={() => setMobileMenuOpen(false)}
               >
                 <BarChart2 className="mr-3" size={20} />
                 <span>SDG 5 Connection</span>
-              </button>
+              </Link>
             </li>
             <li className="mb-4">
-              <button 
-                onClick={() => { 
-                  onNavigate('themes'); 
-                  setMobileMenuOpen(false);
-                }} 
+              <Link 
+                href="/thematic-analysis" 
                 className="flex items-center text-white hover:text-[#D4AF37] transition w-full py-2"
+                onClick={() => setMobileMenuOpen(false)}
               >
                 <HomeIcon className="mr-3" size={20} />
                 <span>Thematic Analysis</span>
-              </button>
+              </Link>
             </li>
             <li className="mb-4">
-              <button 
-                onClick={() => { 
-                  onNavigate('characters'); 
-                  setMobileMenuOpen(false);
-                }} 
+              <Link 
+                href="/character-analysis" 
                 className="flex items-center text-white hover:text-[#D4AF37] transition w-full py-2"
+                onClick={() => setMobileMenuOpen(false)}
               >
                 <Users className="mr-3" size={20} />
                 <span>Character Analysis</span>
-              </button>
+              </Link>
             </li>
             <li className="mb-4">
-              <button 
-                onClick={() => { 
-                  onNavigate('quotes'); 
-                  setMobileMenuOpen(false);
-                }} 
+              <Link 
+                href="/quote-showcase" 
                 className="flex items-center text-white hover:text-[#D4AF37] transition w-full py-2"
+                onClick={() => setMobileMenuOpen(false)}
               >
                 <Quote className="mr-3" size={20} />
                 <span>Quote Showcase</span>
-              </button>
+              </Link>
             </li>
             <li className="mb-4">
-              <button 
-                onClick={() => { 
-                  onNavigate('reviews'); 
-                  setMobileMenuOpen(false);
-                }} 
+              <Link 
+                href="/book-review" 
                 className="flex items-center text-white hover:text-[#D4AF37] transition w-full py-2"
+                onClick={() => setMobileMenuOpen(false)}
               >
                 <Star className="mr-3" size={20} />
                 <span>Book Reviews</span>
-              </button>
+              </Link>
             </li>
             <li className="mb-4">
-              <button 
-                onClick={() => { 
-                  onNavigate('conclusion'); 
-                  setMobileMenuOpen(false);
-                }} 
+              <Link 
+                href="/conclusion" 
                 className="flex items-center text-white hover:text-[#D4AF37] transition w-full py-2"
+                onClick={() => setMobileMenuOpen(false)}
               >
                 <Award className="mr-3" size={20} />
                 <span>Conclusion</span>
-              </button>
+              </Link>
             </li>
             <li className="mb-4">
-              <button 
-                onClick={() => { 
-                  onNavigate('contact'); 
-                  setMobileMenuOpen(false);
-                }} 
+              <Link 
+                href="/contact" 
                 className="flex items-center text-white hover:text-[#D4AF37] transition w-full py-2"
+                onClick={() => setMobileMenuOpen(false)}
               >
                 <MessageSquare className="mr-3" size={20} />
                 <span>Contact Form</span>
-              </button>
+              </Link>
             </li>
           </ul>
           
           <div className="p-4 mt-4 bg-[#D4AF37]/10">
             <p className="text-white/70 text-sm mb-2">Explore Sections</p>
             <div className="flex flex-wrap gap-2">
-              <button 
-                onClick={() => { 
-                  onNavigate('overview'); 
-                  setMobileMenuOpen(false);
-                }} 
+              <Link 
+                href="/book-overview"
+                onClick={() => setMobileMenuOpen(false)}
                 className="bg-white/10 hover:bg-white/20 text-white text-xs px-2 py-1 rounded"
               >
                 Overview
-              </button>
-              <button 
-                onClick={() => { 
-                  onNavigate('themes'); 
-                  setMobileMenuOpen(false);
-                }} 
+              </Link>
+              <Link 
+                href="/thematic-analysis"
+                onClick={() => setMobileMenuOpen(false)}
                 className="bg-white/10 hover:bg-white/20 text-white text-xs px-2 py-1 rounded"
               >
                 Themes
-              </button>
-              <button 
-                onClick={() => { 
-                  onNavigate('reviews'); 
-                  setMobileMenuOpen(false);
-                }} 
+              </Link>
+              <Link 
+                href="/book-review"
+                onClick={() => setMobileMenuOpen(false)}
                 className="bg-white/10 hover:bg-white/20 text-white text-xs px-2 py-1 rounded"
               >
                 Reviews
-              </button>
+              </Link>
             </div>
           </div>
         </div>
@@ -238,18 +217,18 @@ export default function HeroSection({
             <h2 className="text-xl md:text-2xl font-serif italic mb-6">By Chitra Banerjee Divakaruni</h2>
             <p className="text-lg md:text-xl opacity-90 mb-8">A literary exploration of destiny, power, and gender equality through the eyes of Draupadi</p>
             <div className="flex flex-col sm:flex-row gap-4">
-              <button 
-                onClick={onExploreThemes}
-                className="bg-[#D4AF37] text-gray-900 px-6 py-3 rounded-md font-medium hover:bg-white transition"
+              <Link 
+                href="/thematic-analysis"
+                className="bg-[#D4AF37] text-gray-900 px-6 py-3 rounded-md font-medium hover:bg-white transition text-center"
               >
                 Explore Themes
-              </button>
-              <button 
-                onClick={onExploreSDG}
-                className="border border-white text-white px-6 py-3 rounded-md font-medium hover:bg-white hover:text-[#5D4777] transition"
+              </Link>
+              <Link 
+                href="/sdg-connection"
+                className="border border-white text-white px-6 py-3 rounded-md font-medium hover:bg-white hover:text-[#5D4777] transition text-center"
               >
                 Gender Equality & SDG 5
-              </button>
+              </Link>
             </div>
           </div>
         </div>
