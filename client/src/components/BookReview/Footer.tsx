@@ -1,7 +1,9 @@
 import { Twitter, Instagram, Facebook, BookOpen, ArrowUp, Mail, Github, Linkedin } from "lucide-react";
+import { Link } from "wouter";
 
 interface FooterProps {
   onNavigate: (section: string) => void;
+  // This interface is kept for backward compatibility
 }
 
 export default function Footer({ onNavigate }: FooterProps) {
@@ -45,15 +47,15 @@ export default function Footer({ onNavigate }: FooterProps) {
           <div>
             <h3 className="font-serif text-xl font-bold mb-4">Quick Links</h3>
             <ul className="space-y-2">
-              <li><button onClick={() => onNavigate('overview')} className="text-gray-400 hover:text-[#D4AF37] transition">Book Overview</button></li>
-              <li><button onClick={() => onNavigate('sdg')} className="text-gray-400 hover:text-[#D4AF37] transition">SDG 5 Connection</button></li>
-              <li><button onClick={() => onNavigate('themes')} className="text-gray-400 hover:text-[#D4AF37] transition">Thematic Analysis</button></li>
-              <li><button onClick={() => onNavigate('characters')} className="text-gray-400 hover:text-[#D4AF37] transition">Character Analysis</button></li>
-              <li><button onClick={() => onNavigate('quotes')} className="text-gray-400 hover:text-[#D4AF37] transition">Quote Showcase</button></li>
-              <li><button onClick={() => onNavigate('reviews')} className="text-gray-400 hover:text-[#D4AF37] transition">Book Reviews</button></li>
-              <li><button onClick={() => onNavigate('conclusion')} className="text-gray-400 hover:text-[#D4AF37] transition">Conclusion</button></li>
-              <li><button onClick={() => onNavigate('contact')} className="text-gray-400 hover:text-[#D4AF37] transition">Contact</button></li>
-              <li><button onClick={() => onNavigate('top')} className="text-gray-400 hover:text-[#D4AF37] transition flex items-center mt-4">
+              <li><Link href="/book-overview" className="text-gray-400 hover:text-[#D4AF37] transition">Book Overview</Link></li>
+              <li><Link href="/sdg-connection" className="text-gray-400 hover:text-[#D4AF37] transition">SDG 5 Connection</Link></li>
+              <li><Link href="/thematic-analysis" className="text-gray-400 hover:text-[#D4AF37] transition">Thematic Analysis</Link></li>
+              <li><Link href="/character-analysis" className="text-gray-400 hover:text-[#D4AF37] transition">Character Analysis</Link></li>
+              <li><Link href="/quote-showcase" className="text-gray-400 hover:text-[#D4AF37] transition">Quote Showcase</Link></li>
+              <li><Link href="/book-review" className="text-gray-400 hover:text-[#D4AF37] transition">Book Reviews</Link></li>
+              <li><Link href="/conclusion" className="text-gray-400 hover:text-[#D4AF37] transition">Conclusion</Link></li>
+              <li><Link href="/contact" className="text-gray-400 hover:text-[#D4AF37] transition">Contact</Link></li>
+              <li><button onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })} className="text-gray-400 hover:text-[#D4AF37] transition flex items-center mt-4">
                 <span>Back to Top</span>
                 <ArrowUp size={16} className="ml-2" />
               </button></li>
