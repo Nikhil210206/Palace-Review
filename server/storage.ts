@@ -43,7 +43,17 @@ export class MemStorage implements IStorage {
 
   async createFeedback(insertFeedback: InsertFeedback): Promise<Feedback> {
     const id = this.currentFeedbackId++;
-    const feedback: Feedback = { ...insertFeedback, id };
+    
+    // Create a properly typed feedback object
+    const feedback: Feedback = {
+      id,
+      name: insertFeedback.name,
+      email: insertFeedback.email,
+      subject: insertFeedback.subject,
+      message: insertFeedback.message,
+      subscribe: insertFeedback.subscribe ?? false // Use nullish coalescing to provide a default
+    };
+    
     this.feedbacks.set(id, feedback);
     return feedback;
   }
