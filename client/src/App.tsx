@@ -12,6 +12,7 @@ import QuoteShowcasePage from "./pages/QuoteShowcasePage";
 import BookReviewPage from "./pages/BookReviewPage";
 import ConclusionPage from "./pages/ConclusionPage";
 import ContactPage from "./pages/ContactPage";
+import AboutPage from "./pages/AboutPage"; // Import the new About page
 
 function Router() {
   return (
@@ -25,6 +26,7 @@ function Router() {
       <Route path="/book-review" component={BookReviewPage} />
       <Route path="/conclusion" component={ConclusionPage} />
       <Route path="/contact" component={ContactPage} />
+      <Route path="/about" component={AboutPage} /> {/* Added About Route */}
       <Route component={NotFound} />
     </Switch>
   );

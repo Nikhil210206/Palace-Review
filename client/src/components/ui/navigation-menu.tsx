@@ -34,7 +34,14 @@ const NavigationMenuList = React.forwardRef<
       className
     )}
     {...props}
-  />
+  >
+    {/* ✅ Add About Link */}
+    <NavigationMenuItem>
+      <NavigationMenuLink href="/about" className="px-4 py-2 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground">
+        About
+      </NavigationMenuLink>
+    </NavigationMenuItem>
+  </NavigationMenuPrimitive.List>
 ))
 NavigationMenuList.displayName = NavigationMenuPrimitive.List.displayName
 
