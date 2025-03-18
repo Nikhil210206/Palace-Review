@@ -192,7 +192,7 @@ export default function Home() {
       <button onClick={playAudio} className="fixed bottom-6 left-6 bg-[#5D4777] text-white p-3 rounded-full shadow-lg">
         Play MP3
       </button>
-      <audio id="audioPlayer" src="/Users/nikhil/Downloads/PalaceReview/client/src/public/audio/yourfile.mp3"></audio>
+      <audio id="audioPlayer" src="client/src/public/audio/yourfile.mp3"></audio>
     </div>
   );
 }
