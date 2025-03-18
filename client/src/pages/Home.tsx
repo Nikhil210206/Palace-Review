@@ -37,7 +37,11 @@ export default function Home() {
 
   const playAudio = () => {
     const audio = document.getElementById('audioPlayer') as HTMLAudioElement;
-    audio.play();
+    if (audio) {
+      audio.play().catch((error) => {
+        console.error("Audio playback failed:", error);
+      });
+    }
   };
 
   return (
