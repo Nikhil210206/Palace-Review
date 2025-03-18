@@ -35,6 +35,11 @@ export default function Home() {
     });
   };
 
+  const playAudio = () => {
+    const audio = document.getElementById('audioPlayer') as HTMLAudioElement;
+    audio.play();
+  };
+
   return (
     <div className="font-sans bg-gradient-to-b from-[#FDF8E3] to-white text-gray-800 min-h-screen">
       <HeroSection 
@@ -182,6 +187,12 @@ export default function Home() {
       </button>
       
       <Footer onNavigate={scrollToTop} />
+
+      {/* Audio Player and Button */}
+      <button onClick={playAudio} className="fixed bottom-6 left-6 bg-[#5D4777] text-white p-3 rounded-full shadow-lg">
+        Play MP3
+      </button>
+      <audio id="audioPlayer" src="/audio/yourfile.mp3"></audio>
     </div>
   );
 }
