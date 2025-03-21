@@ -14,7 +14,8 @@ import Footer from "@/components/BookReview/Footer";
 
 export default function Home() {
   const [showBackToTop, setShowBackToTop] = useState(false);
-  
+  const [playingAudio, setPlayingAudio] = useState<string | null>(null);
+
   useEffect(() => {
     const handleScroll = () => {
       if (window.scrollY > 500) {
@@ -23,11 +24,11 @@ export default function Home() {
         setShowBackToTop(false);
       }
     };
-    
+
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
-  
+
   const scrollToTop = () => {
     window.scrollTo({
       top: 0,
@@ -35,12 +36,20 @@ export default function Home() {
     });
   };
 
-  const playAudio = () => {
-    const audio = document.getElementById('audioPlayer') as HTMLAudioElement;
+  const toggleAudio = (id: string) => {
+    const audio = document.getElementById(id) as HTMLAudioElement;
     if (audio) {
-      audio.play().catch((error) => {
-        console.error("Audio playback failed:", error);
-      });
+      if (playingAudio === id) {
+        audio.pause();
+        setPlayingAudio(null);
+      } else {
+        if (playingAudio) {
+          const currentAudio = document.getElementById(playingAudio) as HTMLAudioElement;
+          currentAudio.pause();
+        }
+        audio.play();
+        setPlayingAudio(id);
+      }
     }
   };
 
@@ -192,11 +201,20 @@ export default function Home() {
       
       <Footer onNavigate={scrollToTop} />
 
-      {/* Audio Player and Button */}
-      <button onClick={playAudio} className="fixed bottom-6 left-6 bg-[#5D4777] text-white p-3 rounded-full shadow-lg">
-        Play MP3
-      </button>
-      <audio id="audioPlayer" src="/audio/yourfile.mp3"></audio>
+      {/* Audio Player and Buttons */}
+      <div className="fixed bottom-6 right-6 flex flex-col space-y-2">
+        {Array.from({ length: 6 }, (_, i) => (
+          <div key={i} className="flex items-center">
+            <button
+              onClick={() => toggleAudio(`audioPlayer${i + 1}`)}
+              className="bg-[#5D4777] text-white px-4 py-2 rounded-full shadow-lg hover:bg-[#4A3C5F] transition"
+            >
+              {playingAudio === `audioPlayer${i + 1}` ? `Pause Part ${i + 1}` : `Play Part ${i + 1}`}
+            </button>
+            <audio id={`audioPlayer${i + 1}`} src={`/audio/part${i + 1}.mp3`}></audio>
+          </div>
+        ))}
+      </div>
     </div>
   );
 }
