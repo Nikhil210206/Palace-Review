@@ -202,7 +202,7 @@ export default function Home() {
       <Footer onNavigate={scrollToTop} />
 
       {/* Audio Player and Buttons */}
-      <div className="fixed bottom-7 right-7 flex flex-col space-y-2">
+      <div className="fixed bottom-6 right-6 flex flex-col space-y-2">
         {Array.from({ length: 7 }, (_, i) => (
           <div key={i} className="flex items-center">
             <button
