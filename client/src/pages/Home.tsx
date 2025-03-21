@@ -207,7 +207,7 @@ export default function Home() {
           <div key={i} className="flex items-center">
             <button
               onClick={() => toggleAudio(`audioPlayer${i + 1}`)}
-              className="bg-[#5D4777] text-white px-4 py-2 rounded-full shadow-lg hover:bg-[#4A3C5F] transition"
+              className="bg-gradient-to-r from-purple-400 via-pink-500 to-red-500 text-white px-4 py-2 rounded-full shadow-lg hover:from-purple-500 hover:via-pink-600 hover:to-red-600 transition"
             >
               {playingAudio === `audioPlayer${i + 1}` ? `Pause Part ${i + 1}` : `Play Part ${i + 1}`}
             </button>
