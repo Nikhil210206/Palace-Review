@@ -1,1 +1,1 @@
-English Pbl project "THE PALACE OF ILLUTIONS"- 2nd semester 
+English Pbl project "THE PALACE OF ILLUTIONS"- 2nd Semester 
